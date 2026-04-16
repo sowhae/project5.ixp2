@@ -1,0 +1,482 @@
+:root {
+  --cream: #ede8df;
+  --dark: #2b2116;
+  --mid: #7a6e65;
+  --card-bg: #faf7f2;
+}
+
+body {
+  background: var(--cream);
+  color: var(--dark);
+  font-family: 'Itim', cursive;
+}
+
+.wrapper {
+  max-width: 390px;
+  margin: 0 auto;
+  padding: 0 32px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+/* ── INDEX HEADER ── */
+.site-header {
+  max-width: 390px;
+  margin: 0 auto;
+  padding: 56px 32px 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+/* ── MIOPANE HEADER ── */
+.place-header {
+  padding: 24px 24px 0;
+  display: flex;
+  align-items: flex-start;
+}
+
+.place-header .logo__text {
+  font-size: 72px;
+}
+
+.place-header .logo__mascot {
+  width: 82px;
+  height: 82px;
+  margin: 0 -16px;
+  animation: none;
+}
+
+/* ── LOGO ── */
+.logo {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.logo a {
+  text-decoration: none;
+  color: inherit;
+}
+
+.logo__text {
+  font-family: 'Iosevka Charon', monospace;
+  font-size: 140px;
+  font-weight: 700;
+  line-height: 1;
+  letter-spacing: -0.02em;
+  color: var(--dark);
+  display: flex;
+  align-items: center;
+  gap: 0;
+}
+
+/* ── TAGLINE ── */
+.site-tagline {
+  font-family: 'Itim', cursive;
+  font-size: 22px;
+  color: var(--dark);
+  margin-top: -10px;
+  text-align: center;
+}
+
+/* ── INTRO ── */
+.intro {
+  font-size: 14px;
+  line-height: 1.7;
+  text-align: center;
+  color: var(--dark);
+  margin-top: 56px;
+}
+
+/* ── MUNCHING ── */
+.munching {
+  margin-top: 48px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 16px;
+}
+
+.munching__label {
+  font-size: 14px;
+  color: var(--dark);
+  text-align: center;
+}
+
+.munching__list {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  padding: 0 0 0 32px;
+}
+
+.munching__item:nth-child(1) { margin-left: 0px; }
+.munching__item:nth-child(2) { margin-left: 16px; }
+.munching__item:nth-child(3) { margin-left: 8px; }
+.munching__item:nth-child(4) { margin-left: 24px; }
+
+/* ── MAP ── */
+.map-section {
+  position: relative;
+  margin-top: 24px;
+  width: 100vw;
+  margin-left: calc(-50vw + 50%);
+}
+
+.map-wrap {
+  position: relative;
+  width: 100%;
+}
+
+.map {
+  width: 100%;
+  display: block;
+}
+
+.map-pins {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}
+
+.map-pin {
+  cursor: pointer;
+}
+
+/* ── MAP CARD ── */
+.map-card {
+  position: absolute;
+  width: 160px;
+  background: var(--card-bg);
+  border-radius: 0;
+  overflow: hidden;
+  box-shadow: 0 8px 32px rgba(43, 33, 22, 0.2);
+  border: 4px solid var(--dark);
+  text-decoration: none;
+  color: inherit;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.2s ease;
+}
+
+.map-card--visible {
+  opacity: 1;
+  pointer-events: all;
+}
+
+.map-card__top {
+  padding: 16px 16px 8px;
+}
+
+.map-card__title {
+  width: 100%;
+  display: block;
+}
+
+.map-card__hand {
+  width: 100%;
+  display: block;
+  object-fit: contain;
+  height: 160px;
+  background: var(--card-bg);
+}
+/* ── FOOTER ── */
+.site-footer {
+  max-width: 390px;
+  margin: 48px auto 0;
+  padding: 0 32px 48px;
+  text-align: center;
+}
+
+.site-footer__copy {
+  font-size: 12px;
+  color: var(--mid);
+}
+
+/* ── PLACE HERO ── */
+.place-hero {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 32px;
+  gap: 24px;
+}
+
+.place-title__img {
+  width: 200px;
+  display: block;
+}
+
+.place-description {
+  font-size: 13px;
+  line-height: 1.7;
+  color: var(--dark);
+  width: 100%;
+  text-align: left;
+  font-weight: 400;
+}
+
+.place-hero__img {
+  width: 100%;
+  border-radius: 0;
+  display: block;
+}
+
+/* ── BAGELS TRIED GRID ── */
+.bagels-tried {
+  margin-top: 160px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 32px;
+}
+
+.bagels-tried__heading {
+  font-family: 'Itim', cursive;
+  font-size: 11px;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--mid);
+  text-align: center;
+}
+
+.bagels-tried__grid {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  width: 100%;
+}
+
+.bagels-tried__thumb {
+  flex: 1;
+  border-radius: 0;
+  object-fit: cover;
+  display: block;
+  height: 120px;
+}
+
+.breadcrumbs {
+  display: flex;
+  gap: 8px;
+  margin-top: 40px;
+}
+
+/* ── BAGEL ENTRIES ── */
+.bagel-entries {
+  margin-top: 180px;
+  display: flex;
+  flex-direction: column;
+  gap: 180px;
+  width: 100%;
+  align-items: center;
+}
+
+.bagel-entry {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0;
+  position: relative;
+  width: 100%;
+}
+
+.bagel-entry__name {
+  font-family: 'Itim', cursive;
+  font-size: 27px;
+  color: #b87c4a;
+  text-align: center;
+  line-height: 1.4;
+  transform: translateY(140%);
+  transition: transform 0.7s cubic-bezier(0.22, 1, 0.36, 1);
+  margin-bottom: 0;
+  margin-top: 27px;
+  z-index: 0;
+  order: 1;
+}
+
+.bagel-entry__img {
+  width: 100%;
+  border-radius: 0;
+  display: block;
+  position: relative;
+  z-index: 1;
+  margin-bottom: 28px;
+  order: 2;
+}
+
+.bagel-entry.is-visible .bagel-entry__name {
+  transform: translateY(0);
+}
+
+.bagel-entry__tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+  justify-content: flex-start;
+  width: 100%;
+  order: 3;
+}
+
+.tag {
+  font-family: 'Itim', cursive;
+  font-size: 11px;
+  color: var(--mid);
+  border: 1px solid var(--mid);
+  border-radius: 0;
+  padding: 2px 10px;
+  white-space: nowrap;
+}
+
+.bagel-entry__verdict-label {
+  font-family: 'Itim', cursive;
+  font-size: 10px;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--mid);
+  order: 4;
+  margin-top: 40px;
+}
+
+.bagel-entry__rating {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  background: #e0dbd2;
+  border-radius: 0;
+  padding: 10px 28px;
+  margin-top: 12px;
+  order: 5;
+}
+
+.bagel-entry__score {
+  font-family: 'Iosevka Charon', monospace;
+  font-size: 28px;
+  font-weight: 700;
+  color: var(--dark);
+}
+
+.bagel-entry__mascot {
+  width: 36px;
+  height: 36px;
+  object-fit: contain;
+}
+
+.bagel-entry__s {
+  font-family: 'Itim', cursive;
+  font-size: 20px;
+  color: var(--dark);
+}
+
+/* ── REVIEW ── */
+.review {
+  margin-top: 200px;
+  max-width: 390px;
+}
+
+.review__heading {
+  font-family: 'Itim', cursive;
+  font-size: 22px;
+  color: var(--dark);
+  margin-bottom: 24px;
+}
+
+.review__body {
+  font-size: 13px;
+  line-height: 1.75;
+  color: var(--dark);
+  font-weight: normal;
+}
+
+.review__photos {
+  display: flex;
+  gap: 12px;
+  margin-top: 48px;
+  align-items: flex-start;
+}
+
+.review__photo {
+  border-radius: 0;
+  display: block;
+  object-fit: cover;
+}
+
+.review__photo--tall {
+  width: 48%;
+  height: 200px;
+}
+
+.review__photo--short {
+  width: 48%;
+  height: 130px;
+}
+
+.review__rating {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0;
+  margin-top: 64px;
+  margin-bottom: 120px;
+  position: relative;
+}
+
+.review__score {
+  font-family: 'Iosevka Charon', monospace;
+  font-size: 64px;
+  font-weight: 700;
+  color: var(--dark);
+  line-height: 1;
+}
+
+.review__mascot {
+  width: 52px;
+  height: 52px;
+  object-fit: contain;
+  position: absolute;
+  right: calc(50% - 120px);
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+/* ── MASCOT ANIMATION ── */
+@keyframes mascot-idle {
+  0%, 100% { transform: translateY(0px) rotate(-4deg) scale(1); }
+  50%       { transform: translateY(-8px) rotate(4deg) scale(1.04); }
+}
+
+@keyframes mascot-rolloff {
+  0%   { transform: translateX(0px) rotate(0deg); }
+  100% { transform: translateX(-800px) rotate(-720deg); }
+}
+
+@keyframes mascot-rollin {
+  0%   { transform: translateX(800px) rotate(720deg); }
+  100% { transform: translateX(0px) rotate(0deg); }
+}
+
+.logo__mascot {
+  width: 170px;
+  height: 170px;
+  object-fit: contain;
+  display: inline-block;
+  vertical-align: middle;
+  margin: 0 -30px;
+  position: relative;
+  z-index: 1;
+  animation: mascot-idle 3s ease-in-out infinite;
+  transform-origin: center center;
+  cursor: pointer;
+}
+
+.logo__mascot.is-rolling {
+  animation: mascot-rolloff 1.4s ease-in forwards;
+}
+
+.logo__mascot.is-returning {
+  animation: mascot-rollin 1.4s ease-out forwards;
+}
