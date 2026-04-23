@@ -521,21 +521,21 @@ body {
 @media (min-width: 768px) {
 
   .wrapper {
-    max-width: 480px;
+    max-width: 420px;
     padding: 0 24px;
   }
 
   .site-header {
-    max-width: 480px;
+    max-width: 420px;
     padding: 64px 24px 0;
   }
 
   .site-footer {
-    max-width: 480px;
+    max-width: 420px;
   }
 
   .review {
-    max-width: 480px;
+    max-width: 420px;
   }
 
   .logo__text {
@@ -640,7 +640,7 @@ body {
     padding: 12px 36px;
   }
 
-    .site-footer__copy {
+  .site-footer__copy {
     font-size: 13px;
   }
 
