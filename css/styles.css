@@ -5,6 +5,10 @@
   --card-bg: #faf7f2;
 }
 
+html {
+  scroll-behavior: smooth;
+}
+
 body {
   background: var(--cream);
   color: var(--dark);
@@ -20,7 +24,7 @@ body {
   align-items: center;
 }
 
-/* ── INDEX HEADER ── */
+/* index header */
 .site-header {
   max-width: 390px;
   margin: 0 auto;
@@ -30,7 +34,7 @@ body {
   align-items: center;
 }
 
-/* ── MIOPANE HEADER ── */
+/*  header */
 .place-header {
   padding: 24px 24px 0;
   display: flex;
@@ -48,7 +52,7 @@ body {
   animation: none;
 }
 
-/* ── LOGO ── */
+/* logo */
 .logo {
   display: flex;
   flex-direction: column;
@@ -72,7 +76,7 @@ body {
   gap: 0;
 }
 
-/* ── TAGLINE ── */
+/* tagline */
 .site-tagline {
   font-family: 'Itim', cursive;
   font-size: 22px;
@@ -81,7 +85,7 @@ body {
   text-align: center;
 }
 
-/* ── INTRO ── */
+/* intro */
 .intro {
   font-size: 14px;
   line-height: 1.7;
@@ -90,13 +94,13 @@ body {
   margin-top: 56px;
 }
 
-/* ── MUNCHING ── */
+/* munching */
 .munching {
-  margin-top: 48px;
+  margin-top: 80px;
   display: flex;
   flex-direction: column;
   align-items: center;
-  gap: 16px;
+  gap: 24px;
 }
 
 .munching__label {
@@ -105,25 +109,31 @@ body {
   text-align: center;
 }
 
-.munching__list {
-  list-style: none;
+.munching__breadcrumbs {
   display: flex;
   flex-direction: column;
-  gap: 10px;
-  padding: 0 0 0 32px;
+  align-items: flex-start;
+  gap: 12px;
+  padding-left: 32px;
 }
 
-.munching__item:nth-child(1) { margin-left: 0px; }
-.munching__item:nth-child(2) { margin-left: 16px; }
-.munching__item:nth-child(3) { margin-left: 8px; }
-.munching__item:nth-child(4) { margin-left: 24px; }
+.munching__breadcrumb {
+  display: block;
+  height: auto;
+}
 
-/* ── MAP ── */
+.munching__breadcrumbs .munching__breadcrumb:nth-child(1) { margin-left: 0px; }
+.munching__breadcrumbs .munching__breadcrumb:nth-child(2) { margin-left: 20px; }
+.munching__breadcrumbs .munching__breadcrumb:nth-child(3) { margin-left: 10px; }
+.munching__breadcrumbs .munching__breadcrumb:nth-child(4) { margin-left: 28px; }
+
+/* map */
 .map-section {
   position: relative;
   margin-top: 24px;
   width: 100vw;
   margin-left: calc(-50vw + 50%);
+  background: var(--cream);
 }
 
 .map-wrap {
@@ -144,14 +154,31 @@ body {
   height: 100%;
 }
 
-.map-pin {
-  cursor: pointer;
+/* map pin bounce */
+@keyframes pin-bounce {
+  0%, 100% { transform: translateY(0); }
+  40%       { transform: translateY(-12px); }
+  60%       { transform: translateY(-6px); }
 }
 
-/* ── MAP CARD ── */
+.map-pin {
+  cursor: pointer;
+  transform-origin: center bottom;
+}
+
+.map-pin:hover {
+  animation: pin-bounce 0.5s ease;
+}
+
+.map-pin:active {
+  animation: pin-bounce 0.5s ease;
+}
+
+/* map card*/
 .map-card {
   position: absolute;
   width: 160px;
+  height: 240px;
   background: var(--card-bg);
   border-radius: 0;
   overflow: hidden;
@@ -170,22 +197,29 @@ body {
 }
 
 .map-card__top {
-  padding: 16px 16px 8px;
+  padding: 12px 12px 6px;
+  height: 100px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 .map-card__title {
   width: 100%;
+  height: 100%;
+  object-fit: contain;
   display: block;
 }
 
 .map-card__hand {
   width: 100%;
   display: block;
-  object-fit: contain;
-  height: 160px;
+  object-fit: cover;
+  object-position: center top;
+  height: 140px;
   background: var(--card-bg);
 }
-/* ── FOOTER ── */
+/* footer */
 .site-footer {
   max-width: 390px;
   margin: 48px auto 0;
@@ -198,7 +232,7 @@ body {
   color: var(--mid);
 }
 
-/* ── PLACE HERO ── */
+/* place hero */
 .place-hero {
   display: flex;
   flex-direction: column;
@@ -225,9 +259,11 @@ body {
   width: 100%;
   border-radius: 0;
   display: block;
+  min-height: 300px;
+  object-fit: cover;
 }
 
-/* ── BAGELS TRIED GRID ── */
+/* bagels tried grid */
 .bagels-tried {
   margin-top: 160px;
   display: flex;
@@ -266,7 +302,7 @@ body {
   margin-top: 40px;
 }
 
-/* ── BAGEL ENTRIES ── */
+/* bagel entries */
 .bagel-entries {
   margin-top: 180px;
   display: flex;
@@ -317,18 +353,18 @@ body {
   display: flex;
   flex-wrap: wrap;
   gap: 6px;
-  justify-content: flex-start;
+  justify-content: center;
   width: 100%;
   order: 3;
 }
 
 .tag {
   font-family: 'Itim', cursive;
-  font-size: 11px;
+  font-size: 13px;
   color: var(--mid);
   border: 1px solid var(--mid);
   border-radius: 0;
-  padding: 2px 10px;
+  padding: 4px 12px;
   white-space: nowrap;
 }
 
@@ -346,7 +382,7 @@ body {
   display: flex;
   align-items: center;
   gap: 8px;
-  background: #e0dbd2;
+  background: white;
   border-radius: 0;
   padding: 10px 28px;
   margin-top: 12px;
@@ -372,7 +408,7 @@ body {
   color: var(--dark);
 }
 
-/* ── REVIEW ── */
+/* reviews */
 .review {
   margin-top: 200px;
   max-width: 390px;
@@ -443,7 +479,7 @@ body {
   transform: translateY(-50%);
 }
 
-/* ── MASCOT ANIMATION ── */
+/* mascot animation */
 @keyframes mascot-idle {
   0%, 100% { transform: translateY(0px) rotate(-4deg) scale(1); }
   50%       { transform: translateY(-8px) rotate(4deg) scale(1.04); }
@@ -479,4 +515,133 @@ body {
 
 .logo__mascot.is-returning {
   animation: mascot-rollin 1.4s ease-out forwards;
+}
+
+/* computer repsonsive */
+@media (min-width: 768px) {
+
+  .wrapper {
+    max-width: 480px;
+    padding: 0 24px;
+  }
+
+  .site-header {
+    max-width: 480px;
+    padding: 64px 24px 0;
+  }
+
+  .site-footer {
+    max-width: 480px;
+  }
+
+  .review {
+    max-width: 480px;
+  }
+
+  .logo__text {
+    font-size: 160px;
+  }
+
+  .logo__mascot {
+    width: 185px;
+    height: 185px;
+    margin: 0 -34px;
+  }
+
+  .site-tagline {
+    font-size: 26px;
+  }
+
+  .intro {
+    font-size: 15px;
+    margin-top: 64px;
+  }
+
+  .munching__label {
+    font-size: 15px;
+  }
+
+  .munching__breadcrumb {
+    width: 12px;
+    height: 12px;
+  }
+
+  .place-header {
+    padding: 32px 24px 0;
+  }
+
+  .place-header .logo__text {
+    font-size: 80px;
+  }
+
+  .place-header .logo__mascot {
+    width: 90px;
+    height: 90px;
+    margin: 0 -18px;
+  }
+
+  .place-title__img {
+    width: 240px;
+  }
+
+  .place-description {
+    font-size: 14px;
+  }
+
+  .bagels-tried__thumb {
+    height: 140px;
+  }
+
+  .bagel-entry__name {
+    font-size: 30px;
+  }
+
+  .bagel-entry__score {
+    font-size: 32px;
+  }
+
+  .bagel-entry__mascot {
+    width: 40px;
+    height: 40px;
+  }
+
+  .tag {
+    font-size: 12px;
+    padding: 3px 12px;
+  }
+
+  .review__heading {
+    font-size: 26px;
+  }
+
+  .review__body {
+    font-size: 14px;
+  }
+
+  .review__score {
+    font-size: 72px;
+  }
+
+  .review__mascot {
+    width: 56px;
+    height: 56px;
+    right: calc(50% - 130px);
+  }
+
+  .review__photo--tall {
+    height: 240px;
+  }
+
+  .review__photo--short {
+    height: 160px;
+  }
+
+  .bagel-entry__rating {
+    padding: 12px 36px;
+  }
+
+    .site-footer__copy {
+    font-size: 13px;
+  }
+
 }
